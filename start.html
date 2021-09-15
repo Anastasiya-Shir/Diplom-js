@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="start.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form class="form">
+      <div class="input">
+        <input type="text" class="email" placeholder="Введите e-mail" />
+        <input type="text" class="password" placeholder="Введите пароль" />
+      </div>
+      <div class="btn">
+        <button class="btn_send">Отправить</button>
+        <button class="btn_new_user">Регистрация</button>
+      </div>
+    </form>
+    <form class="form_new_user" style="display: none">
+      <div class="input">
+        <input type="text" class="email" placeholder="Введите e-mail" />
+        <input type="text" class="password" placeholder="Введите пароль" />
+        <input
+          type="text"
+          class="check_password"
+          placeholder="Повторите пароль"
+        />
+      </div>
+
+      <button class="btn_add_user">Зарегистрироваться</button>
+    </form>
+    <script src="start.js"></script>
+  </body>
+</html>
