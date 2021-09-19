@@ -8,29 +8,50 @@
     <title>Document</title>
   </head>
   <body>
-    <form class="form">
+    <div class="form">
       <div class="input">
-        <input type="text" class="email" placeholder="Введите e-mail" />
-        <input type="text" class="password" placeholder="Введите пароль" />
+        <input
+          type="text"
+          class="email"
+          placeholder="Введите e-mail"
+          required
+        />
+        <input
+          type="text"
+          class="password"
+          placeholder="Введите пароль"
+          required
+        />
       </div>
       <div class="btn">
         <button class="btn_send">Отправить</button>
         <button class="btn_new_user">Регистрация</button>
       </div>
-    </form>
-    <form class="form_new_user" style="display: none">
+    </div>
+    <div class="form_new_user" style="display: none">
       <div class="input">
-        <input type="text" class="email" placeholder="Введите e-mail" />
-        <input type="text" class="password" placeholder="Введите пароль" />
         <input
           type="text"
+          class="email"
+          placeholder="Введите e-mail"
+          required
+        />
+        <input
+          type="password"
+          class="password"
+          placeholder="Введите пароль"
+          required
+        />
+        <input
+          type="password"
           class="check_password"
           placeholder="Повторите пароль"
+          required
         />
       </div>
 
       <button class="btn_add_user">Зарегистрироваться</button>
-    </form>
+    </div>
     <script src="start.js"></script>
   </body>
 </html>
