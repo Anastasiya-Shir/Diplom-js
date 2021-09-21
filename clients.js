@@ -30,15 +30,55 @@ let response = await fetch(url);
 let commits = await response.json(); 
 // читаем ответ в формате JSON 
 console.log(commits[0].email);
-for (let i = 0; i <commits.length; i++) console.log( commits[i].email);
-for (let i = 0; i <commits.length; i++) console.log( commits[i].name);
-for (let i = 0; i <commits.length; i++) console.log( commits[i].gender);
-for (let i = 0; i <commits.length; i++) console.log( commits[i].company);
-for (let i = 0; i <commits.length; i++) console.log( commits[i].phone);
-for (let i = 0; i <commits.length; i++) console.log( commits[i].balance);
-for (let i = 0; i <commits.length; i++) console.log( commits[i].registered);
+let tbody = document.querySelector('tbody');
+for(var i = 0; i < commits.length; i++)
+
+{
+	var tr = document.createElement('tr');
+	tr.innerHTML =
+		'<td>' + commits[i].email + '</td>' +
+		'<td>' + commits[i].name+ '</td>' +
+		'<td>' + commits[i].gender + '</td>'+        
+		'<td>' + commits[i].company + '</td>'+        
+		'<td>' + commits[i].phone+ '</td>'+        
+		'<td>' + commits[i].balance + '</td>'+   
+
+		'<td>' + commits[i].registered + '</td>';
+        
+
+	tbody.appendChild(tr);
+};
+
+
 })();
 
+
+
+// var contacts =
+// [
+// 	{
+// 		name: 'Ivan',
+// 		surname: 'Ivanov',
+// 		phone: 123123123
+// 	},
+// 	{
+// 		name: 'Iva545n',
+// 		surname: 'Iva5677nov',
+// 		phone: 23123
+// 	}
+// ];
+
+// let tbody = document.querySelector('tbody');
+
+// for(var i = 0; i < contacts.length; i++)
+// {
+// 	var tr = document.createElement('tr');
+// 	tr.innerHTML =
+// 		'<td>' + contacts[i].name + '</td>' +
+// 		'<td>' + contacts[i].surname + '</td>' +
+// 		'<td>' + contacts[i].phone + '</td>';
+// 	tbody.appendChild(tr);
+// };
 
 // async function getUsers(names) {
 //   let jobs = [];
