@@ -24,6 +24,8 @@
 // for (let [email, name] of response.headers) {
 //   alert(email, name);
 //}
+let balance=[];
+let  gender=[];   let countMan = 0;
 (async ()=>{
 let url = 'https://gist.githubusercontent.com/oDASCo/3f4014d24dc79e1e29b58bfa96afaa1b/raw/677516ee3bd278f7e3d805108596ca431d00b629/db.json';
 let response = await fetch(url); 
@@ -31,6 +33,8 @@ let commits = await response.json();
 // читаем ответ в формате JSON 
 console.log(commits[0].email);
 let tbody = document.querySelector('tbody');
+let body = document.querySelector('body');
+
 for(var i = 0; i < commits.length; i++)
 
 {
@@ -44,12 +48,32 @@ for(var i = 0; i < commits.length; i++)
 		'<td>' + commits[i].balance + '</td>'+   
 
 		'<td>' + commits[i].registered + '</td>';
-        
+       ;
+        gender.push(commits[i].gender);
+        balance.push(commits[i].balance.substring(1));
+   
+      
 
 	tbody.appendChild(tr);
 };
-
-
+balance.replace(/,/g,"") ;
+let b = balance.map(Number);
+console.log(b);
+  for(var i = 0; i < gender.length; ++i){
+            if(gender[i] === "female")
+                countMan++;
+        }
+   
+        let countWomen=gender.length-countMan;
+       let  manQ=document.createElement('p')
+       let  womanQ=document.createElement('p')
+      manQ .innerHTML="Количество мужчин "  +  countMan;
+     womanQ .innerHTML="Количество женщин "  +  countWomen;
+       body.prepend(manQ);
+       body.prepend(womanQ);
+       let maxBalance=document.createElement("p");
+       maxBalance.innerHTML="Наибольший баланс: " + gender.max;
+       body.prepend(maxBalance);
 })();
 
 
